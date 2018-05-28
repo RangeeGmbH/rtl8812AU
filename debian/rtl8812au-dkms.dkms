@@ -1,0 +1,10 @@
+PACKAGE_NAME="rtl8812au"
+PACKAGE_VERSION="#MODULE_VERSION#"
+BUILT_MODULE_NAME[0]="rtl8812au"
+PROCS_NUM=`nproc`
+[ $PROCS_NUM -gt 16 ] && PROCS_NUM=16
+MAKE="'make' -j$PROCS_NUM KVER=${kernelver} KSRC=/lib/modules/${kernelver}/build USER_MODULE_NAME=$PACKAGE_NAME"
+CLEAN="'make' clean"
+DEST_MODULE_LOCATION[0]="/updates/dkms"
+AUTOINSTALL="YES"
+REMAKE_INITRD=no
